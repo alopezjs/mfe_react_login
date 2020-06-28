@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: ["src/spaEntry.js"],
   output: {
-    library: "single-spa-react-app",
+    library: "mfe_react_login",
     libraryTarget: "umd",
-    filename: "single-spa-react-app.js",
+    filename: "mfe_react_login.js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
@@ -24,6 +24,12 @@ module.exports = {
       {
         test: /\.css|\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        use: {
+          loader: "url-loader",
+        },
       },
     ],
   },

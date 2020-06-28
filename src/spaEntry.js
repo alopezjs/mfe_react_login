@@ -8,8 +8,14 @@ const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
   rootComponent,
-  domElementGetter: () => document.getElementById("react-app"),
+  domElementGetter: () => document.getElementById("react-login"),
 });
 export const { bootstrap } = reactLifecycles;
 export const { mount } = reactLifecycles;
 export const { unmount } = reactLifecycles;
+export function unload(props) {
+  return Promise.resolve().then(() => {
+    // Hot-reloading implementation goes here
+    console.log("unloaded!");
+  });
+}
