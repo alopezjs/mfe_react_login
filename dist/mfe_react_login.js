@@ -66853,7 +66853,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 const types = {
-  main: "bg-purple-600 text-white font-bold rounded",
+  main: "bg-blue-400 text-white font-bold rounded",
   secondary: "bg-blue-500 text-white font-semibold hover:border-transparent rounded",
   other: "bg-blue-500 border border-white text-white font-semibold hover:border-transparent rounded",
   danger: "bg-red-500 hover:bg-red-600 text-white font-bold rounded",
@@ -66985,7 +66985,8 @@ class Login extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     _utils_firebase__WEBPACK_IMPORTED_MODULE_4__["default"].auth().signInWithEmailAndPassword(email, password).then(response => {
       const user = response.user;
       sessionStorage.setItem("userId", user.uid);
-      sessionStorage.setItem("userEmail", user.email); // location.href=
+      sessionStorage.setItem("userEmail", user.email);
+      window.history.pushState(null, null, "/home");
     }).catch(error => {
       this.setState({
         err: error.message

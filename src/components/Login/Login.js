@@ -41,7 +41,7 @@ class Login extends Component {
         const user = response.user;
         sessionStorage.setItem("userId", user.uid);
         sessionStorage.setItem("userEmail", user.email);
-        // location.href=
+        window.history.pushState(null, null, "/home");
       })
       .catch((error) => {
         this.setState({ err: error.message });

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const types = {
-  main: "bg-purple-600 text-white font-bold rounded",
+  main: "bg-blue-400 text-white font-bold rounded",
   secondary:
     "bg-blue-500 text-white font-semibold hover:border-transparent rounded",
   other:
